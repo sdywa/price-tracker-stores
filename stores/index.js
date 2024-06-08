@@ -1,4 +1,4 @@
-import { testValidation } from "./template/index.js";
+import { testValidation } from "./vkusvill/index.js";
 
 const askApi = async () => {
     await testValidation();
