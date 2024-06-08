@@ -1,4 +1,4 @@
-import { testValidation } from "./template/index.js";
+import { testValidation } from "./dixy/index.js";
 
 const askApi = async () => {
     await testValidation();
