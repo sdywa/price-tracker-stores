@@ -8,7 +8,7 @@ export default [
         ignores: ["cli/**/*", "dist/**/*", "utils/**/*", "node_modules/**/*", "**/*.config.js", "**/settings.js"],
         languageOptions: {
             ecmaVersion: "latest",
-            sourceType: "commonjs",
+            sourceType: "module",
             globals: {
                 ...globals.node,
             },
@@ -102,7 +102,7 @@ export default [
         ignores: ["cli/**/*", "dist/**/*", "utils/**/*", "node_modules/**/*", "**/*.config.js", "**/settings.js"],
         languageOptions: {
             ecmaVersion: "latest",
-            sourceType: "commonjs",
+            sourceType: "module",
             globals: {
                 ...globals.node,
             },

@@ -1,1 +1,3 @@
-console.log("hello world");
+import askApi from "./stores/index.js";
+
+askApi();
