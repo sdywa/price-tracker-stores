@@ -1,5 +1,6 @@
 import axios from "axios";
 
+import settings from "./settings.js";
 import productSchema from "./validation/schemas/product.js";
 import productAmountSchema from "./validation/schemas/productAmount.js";
 import productListSchema from "./validation/schemas/productList.js";
