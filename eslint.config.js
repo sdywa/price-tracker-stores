@@ -1,6 +1,7 @@
 import globals from "globals";
 import js from "@eslint/js";
 import stylistic from "@stylistic/eslint-plugin";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
 
 export default [
     {
@@ -92,7 +93,6 @@ export default [
             radix: ["error", "always"],
             "require-atomic-updates": "error",
             "require-await": "error",
-            "sort-imports": "error",
             "sort-vars": "error",
             yoda: ["error", "never"],
         },
@@ -166,6 +166,24 @@ export default [
             "@stylistic/wrap-iife": ["error", "inside"],
             "@stylistic/wrap-regex": "error",
             "@stylistic/yield-star-spacing": ["error", "before"],
+        }
+    },
+    {
+        files: ["**/*.js"],
+        ignores: ["cli/**/*", "dist/**/*", "utils/**/*", "node_modules/**/*", "**/*.config.js", "**/settings.js"],
+        languageOptions: {
+            ecmaVersion: "latest",
+            sourceType: "module",
+            globals: {
+                ...globals.node,
+            },
+        },
+        plugins: {
+            "simple-import-sort": simpleImportSort,
+        },
+        rules: {
+            "simple-import-sort/imports": "error",
+            "simple-import-sort/exports": "error",
         }
     }
 ];

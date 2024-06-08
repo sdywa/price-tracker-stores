@@ -1,7 +1,8 @@
 import axios from "axios";
+
 import productSchema from "./validation/schemas/product.js";
-import productListSchema from "./validation/schemas/productList.js";
 import productAmountSchema from "./validation/schemas/productAmount.js";
+import productListSchema from "./validation/schemas/productList.js";
 import storeListSchema from "./validation/schemas/storeList.js";
 
 // Шаблон для парсинга API магазинов
