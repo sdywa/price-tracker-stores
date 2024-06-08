@@ -11,6 +11,8 @@ import storeListSchema from "./validation/schemas/storeList.js";
 // По окончанию выписать полученные данные
 
 export const getAllProducts = async () => {
+    // Важное примечание - в одном магазине могут отсутствовать какие-то позиции
+    // Так что надо учесть этот момент и определять товары по всем магазинам
     throw new Error("Not implemented exception");
 };
 
