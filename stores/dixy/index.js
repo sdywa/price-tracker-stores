@@ -1,6 +1,7 @@
 import axios from "axios";
+import fs from "fs";
 
-import settings from "./settings.js";
+// import settings from "./settings.js";
 import productSchema from "./validation/schemas/product.js";
 import productAmountSchema from "./validation/schemas/productAmount.js";
 import productListSchema from "./validation/schemas/productList.js";
@@ -17,7 +18,19 @@ export const getAllProducts = async () => {
 };
 
 export const getAllStores = async () => {
-    throw new Error("Not implemented exception");
+    const response = await axios.get("https://dixy.ru/local/ajax/components/dixy_shop_points.php");
+    const stores = [];
+    for (const store of response.data.features) {
+        const {
+            id,
+            geometry: {
+                coordinates: [latitude, longitude],
+            },
+            properties: { address },
+        } = store;
+        stores.push({ id, name: address, location: { latitude, longitude } });
+    }
+    return stores;
 };
 
 export const getProduct = async (id) => {
@@ -29,11 +42,12 @@ export const getProductAmount = async (id) => {
 };
 
 export const testValidation = async (id) => {
+    // getAllStores();
     const validators = [
-        [productListSchema, getAllProducts],
+        // [productListSchema, getAllProducts],
         [storeListSchema, getAllStores],
-        [productSchema, getProduct],
-        [productAmountSchema, getProductAmount],
+        // [productSchema, getProduct],
+        // [productAmountSchema, getProductAmount],
     ];
 
     for (const [schema, func] of validators) {

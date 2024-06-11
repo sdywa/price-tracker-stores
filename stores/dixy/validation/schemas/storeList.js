@@ -1,21 +1,24 @@
 import Ajv from "ajv";
 
-const ajv = new Ajv;
+const ajv = new Ajv();
 const schema = {
     type: "array",
     items: {
         type: "object",
         additionalProperties: false,
-        required: ["location", "amount", "price"],
+        required: ["id", "location", "name"],
         properties: {
+            id: {
+                type: "integer",
+            },
+            name: {
+                type: "string",
+            },
             location: {
                 type: "object",
                 additionalProperties: false,
-                required: ["name", "latitude", "longitude"],
+                required: ["latitude", "longitude"],
                 properties: {
-                    name: {
-                        type: "string",
-                    },
                     latitude: {
                         type: "string",
                     },

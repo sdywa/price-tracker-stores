@@ -1,11 +1,11 @@
 import Ajv from "ajv";
 
-const ajv = new Ajv;
+const ajv = (new Ajv());
 const schema = {
     type: "object",
     additionalProperties: false,
     required: [],
-    properties: { },
+    properties: {},
 };
 
 export default ajv.compile(schema);
